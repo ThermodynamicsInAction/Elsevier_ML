@@ -140,3 +140,59 @@ res_grid, res_bayes = predictions3(Mcat, Man, issym, P, T, best_model_grid, best
 
 <hr>
 
+<hr>
+
+<h2>Flowchart of the Process</h2>
+
+<div style="font-family: 'Courier New', Courier, monospace;">
+  <pre>
+    ┌───────────────────────────┐
+    │  Importing Libraries      │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │  Loading Data from CSV     │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │  Splitting Data into Train  │
+    │  and Test Sets              │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │   Scaling Features          │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │   Training  Model          │
+    │                            │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │    Predictions and Metrics  │
+    │    (R² and MSE)             │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │   Cross-Validation (CV)     │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │   Grid Search Optimization  │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │   Bayesian Optimization     │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │  Visualizing Results        │
+    └────────────┬───────────────┘
+                 │
+    ┌────────────▼───────────────┐
+    │  Saving Results as CSV/XLSX │
+    └────────────────────────────┘
+  </pre>
+</div>
+
+<hr>
