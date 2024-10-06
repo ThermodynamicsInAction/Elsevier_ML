@@ -95,3 +95,48 @@ loaded_bayes_model = joblib.load('best_model_bayes.pkl')
 # Load the scaler
 scaler = joblib.load('scaler.pkl')
 </code></pre>
+
+<hr>
+
+<h2>How to Perform Calculations</h2>
+<p>Let's assume we are working with the ionic liquid <code>C2ImC1OC8_NTF2</code>. The following steps outline how to perform the calculations:</p>
+
+<h3>1. Define the name and parameters:</h3>
+
+<pre><code>
+nazwa = 'C2ImC1OC8_NTF2'
+Mcat = 239.376  # Molecular weight of the cation
+Man = 280.146  # Molecular weight of the anion
+</code></pre>
+
+<h3>2. Define the pressure and temperature arrays:</h3>
+<p>The pressure values (<code>P</code>) are given in units of bar, and the temperature values (<code>T</code>) are in Kelvin:</p>
+
+<pre><code>
+P = [
+    0.10, 9.81, 19.62, 29.43, 39.24, 49.05, 
+    58.86, 68.67, 78.48, 88.29, 98.10, 107.91, 
+    117.72, 127.53, 137.34, 147.15
+]
+
+T = [295.15, 313.15, 333.45, 353.45, 373.15]
+</code></pre>
+
+<h3>3. Set the symmetry flag:</h3>
+<p>The variable <code>issym</code> is set to <code>0</code> to indicate that the molecule does not have symmetry in this context:</p>
+
+<pre><code>
+issym = 0
+</code></pre>
+
+<h3>4. Perform the calculations:</h3>
+<p>To carry out the calculations, use the following function call:</p>
+
+<pre><code>
+res_grid, res_bayes = predictions3(Mcat, Man, issym, P, T, best_model_grid, best_model_bayes, scaler)
+</code></pre>
+
+<p>This will return the grid search and Bayesian optimization results for the given input parameters.</p>
+
+<hr>
+
