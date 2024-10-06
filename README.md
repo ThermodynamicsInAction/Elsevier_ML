@@ -110,7 +110,7 @@ Man = 280.146  # Molecular weight of the anion
 </code></pre>
 
 <h3>2. Define the pressure and temperature arrays:</h3>
-<p>The pressure values (<code>P</code>) are given in units of bar, and the temperature values (<code>T</code>) are in Kelvin:</p>
+<p>The pressure values (<code>P</code>) , and the temperature values (<code>T</code>) are in Kelvin:</p>
 
 <pre><code>
 P = [
