@@ -1,0 +1,55 @@
+Step 1: import crucial libraries as numpy, pandas, sklearn preprocessing, model 
+selection functions etc.'''
+#I.E.
+/.../
+'''Step 2: Prepare data set and preprocessing:
+Splitting Data into Training and Testing Sets, Scaling data etc.
+'''
+X = df[['M_C', 'M_A', 'SYM', 'P', 'T']].values
+y = df[['EXP U']].values
+/.../
+
+'''Step 3: Preparing the model and layers with the Keras API
+load dense functions, dropout if necessary, l2 regularization'''
+from tensorflow.keras.models import Sequential
+import tensorflow as tf
+/.../
+
+
+'''Step 4: Create model and add layers'''
+model = Sequential()
+###Add layers
+model.add(Dense(5, activation='tanh', kernel_initializer=glorot_uniform(), input_shape=(X_train.shape[1],)))
+model.add(Dense(25, activation='gelu', kernel_initializer=glorot_uniform()))
+/.../
+'''Step 5: Compile the model, create history and loss'''
+
+'''Step 6: Evaluate the model, create test/train predictions, create dataframes, save model
+'''
+'''Step 7: Test the trained model on given parameters of 
+molar masses of cation, anion, temperatures and pressures'''
+#I.E.
+### A function that counts predictions for a specific ionic liquid
+def predictions3(MC,MA,SYM,P,T):
+    res = []
+    for j in T:
+        for i in P:
+            new_geom = [[MC,MA,SYM,i,j]]
+            new_geom = scaler.transform(new_geom)
+            res.append(model.predict(new_geom))
+            #print(model.predict(new_geom))
+    return res
+###Example use 
+name = <'Ionic"Liquid_Name'> #string 
+Mcat = <cation molar mass> #float
+Man =  <anion molar mass> #float
+
+P = <pressure array>
+T = <temperature array>
+]
+result = predictions3(Mcat,Man,0,P,T);
+/.../
+
+'''Save A learned model to h5 file and check'''
+model.save("UNN_GELU_1.h5")
+model_test = load_model("UNN_GELU.h5", custom_objects={'custom_loss': custom_loss, 'custom_loss1': custom_loss1})

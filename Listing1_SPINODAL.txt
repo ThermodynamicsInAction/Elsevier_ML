@@ -1,0 +1,55 @@
+'''Step 1: Importing the required libraries: numpy, scipy.optimize, pandas 
+I.E'''
+/.../
+import scipy.io
+#load and preprocess data i.e.
+data = pd.read_excel('<datafile_name>.xlsx')
+/.../
+
+'''Step 2: Prepare data for ionic liquid:
+    numeric = data.iloc[:, 2:7] #float/int
+    text = data.iloc[:, 0:2] #string
+    Table = data    #Assign a date to the Table variable
+    Ilcode = code   #Assign a code to the IlCode variable
+    return numeric, text, Table, Ilcode
+/.../
+
+'''Step 3: Sort and prepare the rest of the data '''
+/.../
+
+'''Step 4: Define fit functions, e.g., speed of sound i.e.,
+create proper fits and plots additional''
+
+def cspin(p, *b): # <-- *args notation
+    return (1 + b[0] * p) ** b[1]
+/.../
+###In GitHub code we show how to get graphs and curve fits at the same time
+
+'''Step 5: Define thermodynamical functions i.e. Daridon route, AlphaP etc. 
+calculate residuals using TRR algorithm'''
+def Daridon(T, *b):
+    return (b[0] + b[1] * T**(1/b[2]))**(1/b[3])
+###Definiton of residual Daridon function 
+def residualsDaridon(b, T, y):
+    return Daridon(T, *b) - y
+/.../
+result = least_squares(residualsDaridon, b0, args=(T_res, y_res), method='trf')
+#Derivative of Daridon, AlphaP, derivative of Alpha, Heat capacity, KappaTs fitting as functions
+/.../
+
+'''
+Using *b as an argument in a function definition is useful when we want to pass a variable number of arguments to a function. For example, when we do not know in advance the number of arguments that will be passed to the function, or when we want to be more flexible in the use of the function.
+'''
+'''Step 6: Create a bunch of empty arrays to store the results of the numerical predictor-corrector method'''
+/.../
+
+'''Step 7: Define the predictor-corrector method. 
+    The predictor-corrector Heun's method is implemented in a loop iterating over the pressure values. Within each iteration, the predictor block calculates intermediate values based on the previous step, while the corrector block refines these values to improve accuracy. Specific functions are applied at each step to ensure proper calculation.
+'''
+### Example:
+for j in range(1, len(Pf)):
+    <Block of predictor >
+    ###Put here proper functions
+    <Block of corrector> 
+
+'''Step 8: Add optional: charts, compare with other methods.'''
