@@ -4,13 +4,16 @@ Updated codes for ML methods
 
 <p>The Python scripts contained in this directory include:</p>
 <ul>
-  <li>XGBoost Method</li>
+  <li>Spinodal Method (listing 1)</li>
+  <li>Feed Forward Neural Networks (listing 2)</li>
+  <li>XGBoost Method (listing 3)</li>
   <li>GBDT (Gradient Boosting Decision Trees)</li>
   <li>GB (Gradient Boosting)</li>
   <li>RF (Random Forest)</li>
   <li>SVR (Support Vector Regression)</li>
   <li>KNN (K-Nearest Neighbors)</li>
-  <li>Feed Forward Neural Networks</li>
+  
+  
 </ul>
 
 <hr>
