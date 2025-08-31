@@ -1,7 +1,7 @@
 # codes
-Updated codes for ML methods
+Repository contains codes for Spinodal, Neural network and ML methods. 
 <h1>Python Scripts Documentation</h1>
-
+The Python code for the spinodal method, multilayer feed forward neural network, and XGBoost method in the book is concisely presented in listings 1-3. The XGBoost method listing can be easily modified (basically, you just need to import other libraries) with other methods such as KNN, RF, SVR, GBDT, GB, etc.
 <p>The Python scripts contained in this directory include:</p>
 <ul>
   <li>Spinodal Method (listing 1)</li>
